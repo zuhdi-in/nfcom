@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const data = {
+            name : 'Ridwan',
+            jobTitle : 'Manager',
+            status : 'Menikah'
+        };
+
+        if (data.jobTitle === 'Manager') {
+            gapok = 15000000;
+        }
+        else if (data.jobTitle === 'Asisten Manager') {
+            gapok = 10000000;
+        }
+        else if (data.jobTitle === 'Staff') {
+            gapok = 5000000;
+        }
+        else {
+            gapok = 0
+        }
+
+        const tunjab = 15 / 100 * gapok;
+        const bpjs = 10 / 100 * gapok;
+        const tunkel = data.status == "Menikah" ? 20 / 100 * gapok : 0
+        const togaji = gapok + tunjab + bpjs + tunkel
+
+        document.write(
+        `<p><label>Nama : </label>${data.name}</p>
+        <p><label>Jabatan : </label>${data.jobTitle}</p>
+        <p><label>Status : </label>${data.status}</p>
+        <table cellpadding=8px border=1px>
+            <thead bgcolor=yellow>
+                <tr>
+                    <td>Data</td>
+                    <td>Keterangan</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Gaji Pokok</td>
+                    <td>Rp.${gapok.toLocaleString()}</td>
+                </tr>
+                <tr>
+                    <td>Tunjab</td>
+                    <td>Rp.${tunjab.toLocaleString()}</td>
+                </tr>
+                <tr>
+                    <td>BPJS</td>
+                    <td>Rp.${bpjs.toLocaleString()}</td>
+                </tr>
+                <tr>
+                    <td>Tunkel</td>
+                    <td>Rp.${tunkel.toLocaleString()}</td>
+                </tr>
+            </tbody>
+            <tfoot bgcolor=green>
+                <tr>
+                    <td>Total Gaji</td>
+                    <td>Rp.${togaji.toLocaleString()}</td>
+                </tr>
+            </tfoot>
+        </table>`
+        )
+    </script>
+</body>
+</html>
