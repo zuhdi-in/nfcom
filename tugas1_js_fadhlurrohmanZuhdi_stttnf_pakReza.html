@@ -8,36 +8,34 @@
 </head>
 <body>
     <script>
-        const data = {
-            name : 'Ridwan',
-            jobTitle : 'Manager',
-            status : 'Menikah',
+        let name = 'Ridwan',
+            jobTitle = 'Manager',
+            status = 'Menikah',
             gapok,
-            tubjab,
+            tunjab,
             bpjs,
             tunkel,
             togaji
-        };
 
-        if (data.jobTitle === 'Manager') {
+        if (jobTitle === 'Manager') {
             gapok = 15000000;
         }
-        else if (data.jobTitle === 'Asisten Manager') {
+        else if (jobTitle === 'Asisten Manager') {
             gapok = 10000000;
         }
-        else if (data.jobTitle === 'Staff') {
+        else if (jobTitle === 'Staff') {
             gapok = 5000000;
         }
 
-        const tunjab = 15 / 100 * gapok;
-        const bpjs = 10 / 100 * gapok;
-        const tunkel = data.status == "Menikah" ? 20 / 100 * gapok : 0
-        const togaji = gapok + tunjab + bpjs + tunkel
+        tunjab = 15 / 100 * gapok;
+        bpjs = 10 / 100 * gapok;
+        tunkel = status == "Menikah" ? 20 / 100 * gapok : 0
+        togaji = gapok + tunjab + bpjs + tunkel
 
         document.write(
-        `<p><label>Nama : </label>${data.name}</p>
-        <p><label>Jabatan : </label>${data.jobTitle}</p>
-        <p><label>Status : </label>${data.status}</p>
+        `<p><label>Nama : </label>${name}</p>
+        <p><label>Jabatan : </label>${jobTitle}</p>
+        <p><label>Status : </label>${status}</p>
         <table cellpadding=8px border=1px>
             <thead bgcolor=yellow>
                 <tr>
@@ -65,8 +63,8 @@
             </tbody>
             <tfoot bgcolor=green>
                 <tr>
-                    <td>Total Gaji</td>
-                    <td>Rp.${togaji.toLocaleString()}</td>
+                    <th>Total Gaji</th>
+                    <th>Rp.${togaji.toLocaleString()}</th>
                 </tr>
             </tfoot>
         </table>`
