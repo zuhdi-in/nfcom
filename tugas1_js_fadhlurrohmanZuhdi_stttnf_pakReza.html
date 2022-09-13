@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let name = 'Ridwan',
+            jobTitle = 'Manager',
+            status = 'Menikah',
+            gapok,
+            tunjab,
+            bpjs,
+            tunkel,
+            togaji
+
+        if (jobTitle === 'Manager') {
+            gapok = 15000000;
+        }
+        else if (jobTitle === 'Asisten Manager') {
+            gapok = 10000000;
+        }
+        else if (jobTitle === 'Staff') {
+            gapok = 5000000;
+        }
+
+        tunjab = 15 / 100 * gapok;
+        bpjs = 10 / 100 * gapok;
+        tunkel = status == "Menikah" ? 20 / 100 * gapok : 0
+        togaji = gapok + tunjab + bpjs + tunkel
+
+        document.write(
+        `<p><label>Nama : </label>${name}</p>
+        <p><label>Jabatan : </label>${jobTitle}</p>
+        <p><label>Status : </label>${status}</p>
+        <table cellpadding=8px border=1px>
+            <thead bgcolor=yellow>
+                <tr>
+                    <th>Data</th>
+                    <th>Keterangan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Gaji Pokok</td>
+                    <td>Rp.${gapok.toLocaleString()}</td>
+                </tr>
+                <tr>
+                    <td>Tunjab</td>
+                    <td>Rp.${tunjab.toLocaleString()}</td>
+                </tr>
+                <tr>
+                    <td>BPJS</td>
+                    <td>Rp.${bpjs.toLocaleString()}</td>
+                </tr>
+                <tr>
+                    <td>Tunkel</td>
+                    <td>Rp.${tunkel.toLocaleString()}</td>
+                </tr>
+            </tbody>
+            <tfoot bgcolor=green>
+                <tr>
+                    <th>Total Gaji</th>
+                    <th>Rp.${togaji.toLocaleString()}</th>
+                </tr>
+            </tfoot>
+        </table>`
+        )
+    </script>
+</body>
+</html>
